@@ -74,7 +74,7 @@ module VORLON {
             var jsonValue = JSON.stringify(r.value, undefined, 4);
 
             var propertiesDiv = document.querySelector('#office-properties');
-            var propValues = document.querySelector('#office-results-values');
+            let propValues: HTMLElement = <HTMLElement>document.querySelector('#office-results-values');
 
             if (propValues !== undefined && propValues !== null) {
                 while (propValues.hasChildNodes()) {
@@ -90,8 +90,8 @@ module VORLON {
             var container = document.createElement('pre');
             container.className = 'results';
             container.innerHTML = OfficeTools.FormatJson(jsonValue);
-            
-            
+
+
             propValues.appendChild(container);
 
         }
